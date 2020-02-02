@@ -12,5 +12,5 @@ spec:
         paths:
           - backend:
               serviceName: cms-frontend-svc
-              servicePort: 80
+              servicePort: 5000
             path: /

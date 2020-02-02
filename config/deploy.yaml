@@ -19,7 +19,7 @@ spec:
         component: frontend
     spec:
       containers:
-        - image: 192.168.11.3:10000/ci/home-cms:latest.
+        - image: 192.168.11.3:10000/ci/home-cms:frontend.master.39f988b.200202.7
           name: home-cms-frontend
           imagePullPolicy: IfNotPresent
           ports:
