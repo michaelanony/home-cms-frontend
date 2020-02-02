@@ -28,7 +28,7 @@
         "redux-devtools-extension": "^2.13.8",
         "serve": "^11.3.0",
         "typescript": "~3.7.2",
-        "node-sass": "^4.13.1"
+        "node-sass": "~4.13.1"
     },
     "scripts": {
         "start": "react-app-rewired start",
