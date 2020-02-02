@@ -1,0 +1,41 @@
+.header-title{
+    height: 60px;
+    width: 100%;
+    border-bottom: grey solid 2px;
+    color: gray;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    font-weight: bold;
+    line-height: 58px;
+    background-color: white;
+    .header-notlogin{
+        text-align: center;
+        font-size: 32px;
+        color: black;
+        margin-left: 200px;
+    }
+    .header-title-content{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        .header-title-content-user{
+            margin-left: 240px;
+            span{
+                margin-right: 20px;
+            }
+       
+        }
+        .header-title-content-logout{
+            margin-right: 50px;             
+            display: flex;
+            width: 150px;
+            justify-content: space-between;
+            span{
+                cursor: pointer;
+            }
+        }
+     
+    }
+}

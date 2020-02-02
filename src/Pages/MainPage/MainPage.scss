@@ -1,0 +1,40 @@
+.logo {
+    height: 32px;
+
+    margin: 32px;
+}
+.header_title{
+    color: gray;
+    font-weight: bold;
+    vertical-align: center;
+    font-size: 25px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    font-weight: bold;
+    background-color: white;
+}
+.foot_content{
+    text-align: center;
+    position: fixed;
+    overflow: auto;
+    bottom: 0;
+    width:100%;
+}
+.manpage_sider{
+    overflow:auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+
+}
+.mp_sb_icon{
+    div{
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    margin: 20px;
+}
