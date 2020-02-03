@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from "./myaxios";
 import { LoginResult, UserList, CityListResult } from "../Types/Types"
 const REACT_APP_API_HOST = "http://127.0.0.1"
 
 /**
- * ==========================login==========================
+ * ==========================User==========================
  */
 export const apiUserLogin = async (username: string, password: string): Promise<LoginResult> => {
     return axios({
@@ -26,13 +26,20 @@ export const apiUserLogin = async (username: string, password: string): Promise<
 export const apiGetAllUsers = async (): Promise<UserList> => {
     return axios({
         url: REACT_APP_API_HOST + `/api/user/alluser`,
-        method: "GET"
+        method: "GET",
     }).then(res => {
         return res.data
     })
 }
 
-
+export const apiCheckLogin = async (): Promise<LoginResult> => {
+    return axios({
+        url: REACT_APP_API_HOST + `/api/user/current`,
+        method: "GET",
+    }).then(res => {
+        return res.data
+    })
+}
 /**
  * ==========================FY==========================
  */

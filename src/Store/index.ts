@@ -1,16 +1,20 @@
-import { createStore, applyMiddleware,compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reducer from './reducer'
-import thunk from 'redux-thunk'
+import reducer from './reducer/reducer'
+import rootSaga from "./sagas";
+import createSagaMiddleware from "redux-saga";
 
 const composeEnhancers = composeWithDevTools({});
-
+const sagaMiddleware = createSagaMiddleware()
 const enhancer = composeEnhancers(
-    applyMiddleware(thunk)
+    applyMiddleware(sagaMiddleware)
 )
 
 const store = createStore(
     reducer,
     enhancer
 )
+
+
+export type AppState = ReturnType<typeof reducer>;
 export default store;
