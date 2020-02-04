@@ -15,6 +15,7 @@ const store = createStore(
     enhancer
 )
 
+sagaMiddleware.run(rootSaga);
 
 export type AppState = ReturnType<typeof reducer>;
 export default store;

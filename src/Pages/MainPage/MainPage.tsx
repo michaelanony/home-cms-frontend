@@ -7,13 +7,16 @@ import {
     Switch
 } from "react-router-dom";
 import "./MainPage.scss"
+import SiderBar from "../../Components/SiderBar/SiderBar"
+import Header from "../../Components/Header/Header"
+import Footer from "../../Components/Footer/Footer"
 import { RouteComponentProps } from "react-router";
-import { Layout, Menu, Icon } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+
+
 
 const MainPage: React.FC<RouteComponentProps> = ({ history }) => {
     return (
-        <div>
+        <div className="content">
 
         </div>
     )

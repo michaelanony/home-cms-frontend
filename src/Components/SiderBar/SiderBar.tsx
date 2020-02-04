@@ -11,12 +11,11 @@ import { RouteComponentProps } from "react-router";
 import { City } from "../../Types/Types"
 import { Menu, Icon } from 'antd';
 import { apiGetAllCities } from "../../Api/services"
+import store from "../../Store/index"
 const { SubMenu } = Menu;
 
-type Props = {
-    isLogin: boolean
-}
-const SiderBar: React.FC<Props> = ({ isLogin }) => {
+
+const SiderBar: React.FC<{}> = () => {
     const [cityList, setCityList] = useState<City[]>([])
     useEffect(() => {
         apiGetAllCities().then(res => {
@@ -25,7 +24,7 @@ const SiderBar: React.FC<Props> = ({ isLogin }) => {
         })
     }, [])
     const generateSiderBar = () => {
-        if (isLogin)
+        if (store.getState().loginStatus.isLogin)
             return (
                 <div>
                     < Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} >

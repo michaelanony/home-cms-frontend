@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-
-export default class actionTypes extends Component {
-  
+export enum ActionType {
+    USER_SIGNIN_WITH_SSO_SUCCESS = "USER_SIGNIN_WITH_SSO_SUCCESS",
+    USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS",
+    API_RESPONSE_UNAUTHORIZED = "API_RESPONSE_UNAUTHORIZED",
+    SET_USER_NAME = "SET_USER_NAME"
 }
+

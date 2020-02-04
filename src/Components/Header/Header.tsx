@@ -10,18 +10,17 @@ import "./Header.scss";
 import { RouteComponentProps } from "react-router";
 import { UserInfo } from "../../Types/Types"
 import { Menu, Icon } from 'antd';
+import store from "../../Store/index"
+
+
 const { SubMenu } = Menu;
-type Props = {
-    isLogin: boolean
-    currentUser: string
-}
-const Header: React.FC<Props> = ({ isLogin, currentUser }) => {
-    if (isLogin) {
+const Header: React.FC<{}> = () => {
+    if (store.getState().loginStatus.isLogin) {
         return (
             <div className="header-title" >
                 <div className="header-title-content">
                     <div className="header-title-content-user">
-                        <span>欢迎:</span><span>{currentUser}</span>
+                        <span>欢迎:</span><span>test</span>
                     </div>
                     <div className="header-title-content-logout">
                         <span>个人中心</span>

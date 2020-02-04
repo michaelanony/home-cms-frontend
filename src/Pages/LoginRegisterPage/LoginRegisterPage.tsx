@@ -11,12 +11,12 @@ import {
 import "./LoginRegisterPage.scss"
 import { RouteComponentProps } from "react-router";
 import { Layout, Menu, Icon } from 'antd';
+
 const { Header, Content, Footer, Sider } = Layout;
 type Props = {
-    setLogin: Dispatch<boolean>,
-    setCurrentUser: Dispatch<string>
+
 }
-const LoginRegisterPage: React.FC<Props> = ({ setLogin, setCurrentUser }) => {
+const LoginRegisterPage: React.FC<{}> = ({ }) => {
     const [isShowResgisterPage, setIsShowRegisterPage] = useState(false)
     const generateForm = () => {
         if (isShowResgisterPage) {
@@ -25,9 +25,7 @@ const LoginRegisterPage: React.FC<Props> = ({ setLogin, setCurrentUser }) => {
             />
         } else {
             return <LoginForm
-                setLogin={setLogin}
                 setIsShowRegisterPage={setIsShowRegisterPage}
-                setCurrentUser={setCurrentUser}
             />
         }
     }

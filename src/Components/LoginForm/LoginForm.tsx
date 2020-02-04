@@ -2,14 +2,13 @@ import React, { Dispatch } from "react";
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import "./LoginForm.scss"
 import { apiUserLogin } from "../../Api/services"
+import { actions } from "../../Store/actions/actionCreators"
+import store from "../../Store/index"
 const FormItem = Form.Item
 type IProps = {
     form: any
     setIsShowRegisterPage: Dispatch<boolean>
-    setLogin: Dispatch<boolean>,
-    setCurrentUser: Dispatch<string>
 }
-
 
 const LoginForm = (props: IProps) => {
     const showRegisterPage = () => {
@@ -25,9 +24,11 @@ const LoginForm = (props: IProps) => {
                 console.log(values.password)
                 apiUserLogin(values.username, values.password).then(res => {
                     if (res.code === 200) {
-                        props.setLogin(true)
+
                         console.log("ret", res.data)
-                        props.setCurrentUser(res.data.u_name)
+
+                        store.dispatch(actions.userLoginSuccess())
+                        console.log(store.getState())
                     } else {
                         alert("账号密码错误")
                     }

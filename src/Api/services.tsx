@@ -1,6 +1,6 @@
 import axios from "./myaxios";
 import { LoginResult, UserList, CityListResult } from "../Types/Types"
-const REACT_APP_API_HOST = "http://127.0.0.1"
+const REACT_APP_API_HOST = "http://cms-backend-svc.home-cms"
 
 /**
  * ==========================User==========================

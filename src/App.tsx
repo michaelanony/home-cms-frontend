@@ -1,56 +1,83 @@
-import React, { useEffect, useState } from 'react';
-import routers from './Router'
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch
+} from "react-router-dom";
+import MainPage from "./Pages/MainPage/MainPage";
+import LoginPage from "./Pages/LoginRegisterPage/LoginRegisterPage"
+import { actions } from "./Store/actions/actionCreators";
+import { connect } from "react-redux";
+import { AppState } from "./Store";
+import './App.scss'
 import SiderBar from "./Components/SiderBar/SiderBar"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
-import LoginRegisterPage from "./Pages/LoginRegisterPage/LoginRegisterPage"
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import './App.scss'
-const App: React.FC = () => {
-    const [login, setLogin] = useState<boolean>(false)
-    const [currentUser, setCurrentUser] = useState<string>('')
-    const generateContent = () => {
-        if (login) {
+
+
+const App: React.FC<
+    ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
+> = ({ isLogin, userSigninWithSSOSuccess, userLoginSuccess }) => {
+    const generateContet = () => {
+        console.log(isLogin)
+        if (isLogin) {
             return (
-                <div>
-                    {
-                        routers.map((route, key) => {
-                            if (route.exact) {
-                                return (<Route key={key} path={route.path} render={props => (<route.component {...props} />)} />)
-                            } else {
-                                return (<Route key={key} path={route.path} render={props => (<route.component {...props} />)} />)
-                            }
-                        })
-                    }</div>
+                <Switch>
+                    <Redirect
+                        path="/index"
+                        exact
+                        to={{ pathname: "/index" }}
+                    // to={{ pathname: "/config/certificates" }}
+                    ></Redirect>
+                    <Route path="/index" component={MainPage} />
+                </Switch>
             )
         } else {
             return (
-                <LoginRegisterPage
-                    setLogin={setLogin}
-                    setCurrentUser={setCurrentUser}
-                />
+                <Switch>
+                    <Redirect
+                        path="/"
+                        exact
+                        to={{ pathname: "/login" }}
+                    // to={{ pathname: "/config/certificates" }}
+                    ></Redirect>
+                    <Route path="/" component={LoginPage} />
+                </Switch>
             )
         }
     }
     return (
         <Router>
             <div className="content">
-                <SiderBar
-                    isLogin={login}
-                />
-                <div className="right-content">
-                    <Header
-                        isLogin={login}
-                        currentUser={currentUser}
-                    />
-                    <div className="app_content">
-                        {generateContent()}</div>
+                <div className="content">
+                    <SiderBar
 
-                    <Footer />
+                    />
+                    <div className="right-content">
+                        <Header
+
+                        />
+                        <div className="app_content">
+                            {generateContet()}
+                        </div>
+                        <Footer />
+                    </div>
                 </div>
             </div>
         </Router>
-    );
-}
+    )
 
-export default App;
+}
+const mapStateToProps = (state: AppState) => ({
+    isLogin: state.loginStatus.isLogin
+});
+const mapDispatchToProps = {
+    userSigninWithSSOSuccess: actions.userSigninWithSSOSuccess,
+    userLoginSuccess: actions.userLoginSuccess
+};
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
+
