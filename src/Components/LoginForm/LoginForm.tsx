@@ -25,8 +25,6 @@ const LoginForm = (props: IProps) => {
                 apiUserLogin(values.username, values.password).then(res => {
                     if (res.code === 200) {
 
-                        console.log("ret", res.data)
-
                         store.dispatch(actions.userLoginSuccess())
                         console.log(store.getState())
                     } else {

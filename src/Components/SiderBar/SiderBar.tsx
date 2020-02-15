@@ -10,7 +10,7 @@ import "./SiderBar.scss";
 import { RouteComponentProps } from "react-router";
 import { City } from "../../Types/Types"
 import { Menu, Icon } from 'antd';
-import { apiGetAllCities } from "../../Api/services"
+import { apiGetAllCities, apiCookie } from "../../Api/services"
 import store from "../../Store/index"
 const { SubMenu } = Menu;
 
@@ -23,6 +23,7 @@ const SiderBar: React.FC<{}> = () => {
             setCityList(res.data)
         })
     }, [])
+
     const generateSiderBar = () => {
         if (store.getState().loginStatus.isLogin)
             return (

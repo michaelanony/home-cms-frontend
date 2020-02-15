@@ -1,0 +1,410 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "price_list": [
+            {
+                "month": 12,
+                "product_name": "连续包年",
+                "product_id": "tv.danmaku.bilianimexAuto12VIPgroup1bf2",
+                "sub_type": 1,
+                "suit_type": 0,
+                "original_price": 233,
+                "discount_price": 148,
+                "discount_rate": "6.3折",
+                "selected": 1,
+                "id": 30,
+                "type": 1,
+                "channel_type": "vip_renew_year",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            },
+            {
+                "month": 3,
+                "product_name": "连续包季",
+                "product_id": "tv.danmaku.bilianimexAuto3VIPgroup1bf2",
+                "sub_type": 1,
+                "suit_type": 0,
+                "original_price": 45,
+                "discount_price": 45,
+                "selected": 0,
+                "id": 31,
+                "type": 0,
+                "channel_type": "vip_renew",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            },
+            {
+                "month": 1,
+                "product_name": "连续包月",
+                "product_id": "tv.danmaku.bilianimexAuto1VIPbf2",
+                "sub_type": 1,
+                "suit_type": 0,
+                "original_price": 15,
+                "discount_price": 15,
+                "selected": 0,
+                "id": 32,
+                "type": 0,
+                "channel_type": "vip_renew",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            },
+            {
+                "month": 12,
+                "product_name": "1年大会员",
+                "product_id": "tv.danmaku.bilianimex12VIP",
+                "sub_type": 0,
+                "suit_type": 0,
+                "original_price": 168,
+                "discount_price": 168,
+                "remark": "366天大会员，天天好福利",
+                "selected": 0,
+                "id": 33,
+                "type": 1,
+                "channel_type": "vip",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            },
+            {
+                "month": 3,
+                "product_name": "1季大会员",
+                "product_id": "tv.danmaku.bilianimex3VIP",
+                "sub_type": 0,
+                "suit_type": 0,
+                "original_price": 68,
+                "discount_price": 68,
+                "remark": "93天大会员",
+                "selected": 0,
+                "id": 34,
+                "type": 0,
+                "channel_type": "vip",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            },
+            {
+                "month": 1,
+                "product_name": "1月大会员",
+                "product_id": "tv.danmaku.bilianimex1VIP",
+                "sub_type": 0,
+                "suit_type": 0,
+                "original_price": 25,
+                "discount_price": 25,
+                "remark": "31天大会员",
+                "selected": 0,
+                "id": 35,
+                "type": 0,
+                "channel_type": "vip",
+                "on_sale": 0,
+                "useable": 0,
+                "unuse_reason": ""
+            }
+        ],
+        "code_switch": 1,
+        "give_switch": 1,
+        "privileges": {
+            "tv": {
+                "title": "电视大会员权益",
+                "list": [
+                    {
+                        "name": "免费看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/cca929463895f8d2a5d65d41e0f69a608b711539.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "抢先看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/2dac1a2c649407dc8ce5f899f244d3aed557c458.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "超清看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/1870c718e3cd2a5625934d401838e67d738d4fcc.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "任性听",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/346501b1f5f11f8efaae210d180b30e2865cf36d.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "专属挂件",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/4198eee83d94539be16f60daac277bce5f8f01dc.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "空间自主头图",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/a8144d3bbfeeaf43f3eff6741f4a7f5fcecec31c.png",
+                        "type": 0,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/0ebb039d9fefd37e094f0f181d7cfac9efd019be.png"
+                    },
+                    {
+                        "name": "评论表情",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/2080c73b6fa52351111b2830bc50a2a417b55216.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "动态卡片装扮",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/fb9169586bb73dda319d6379440284361f46ff18.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "漫读券",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/eeabde9fc3b0891558af31c65e23913894324c6f.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "游戏礼包",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/77cbead3c0361dc9bb5638a901b89edec5820d0c.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/c1c810d0ad13b325da6f3dbde1adb5f351adc55c.png"
+                    },
+                    {
+                        "name": "会员购",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/37108d523b939e3c4071d4fdd104b50003a1f627.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/972283284cfb7f3b3063b1b391aeeb4cbed3249d.png"
+                    },
+                    {
+                        "name": "B币券",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/90e1cad7ccaa4c7d29728bdb68bb1af833b2b46b.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/c3dcef2bfea737a1342dacea1027a3b299d3cf71.png"
+                    },
+                    {
+                        "name": "粉色昵称",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/f50ed845a94ac63adaa28f47716965269f9a9bdc.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/b67288e008a9fdfec0b13a27a527bb8db701c0d4.png"
+                    }
+                ]
+            },
+            "vip": {
+                "title": "大会员权益",
+                "list": [
+                    {
+                        "name": "免费看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/cca929463895f8d2a5d65d41e0f69a608b711539.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "抢先看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/2dac1a2c649407dc8ce5f899f244d3aed557c458.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "超清看",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/1870c718e3cd2a5625934d401838e67d738d4fcc.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "任性听",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/346501b1f5f11f8efaae210d180b30e2865cf36d.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "专属挂件",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/4198eee83d94539be16f60daac277bce5f8f01dc.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "空间自主头图",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/a8144d3bbfeeaf43f3eff6741f4a7f5fcecec31c.png",
+                        "type": 0,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/0ebb039d9fefd37e094f0f181d7cfac9efd019be.png"
+                    },
+                    {
+                        "name": "评论表情",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/2080c73b6fa52351111b2830bc50a2a417b55216.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "动态卡片装扮",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/fb9169586bb73dda319d6379440284361f46ff18.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "漫读券",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/eeabde9fc3b0891558af31c65e23913894324c6f.png",
+                        "type": 0
+                    },
+                    {
+                        "name": "游戏礼包",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/77cbead3c0361dc9bb5638a901b89edec5820d0c.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/c1c810d0ad13b325da6f3dbde1adb5f351adc55c.png"
+                    },
+                    {
+                        "name": "会员购",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/37108d523b939e3c4071d4fdd104b50003a1f627.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/972283284cfb7f3b3063b1b391aeeb4cbed3249d.png"
+                    },
+                    {
+                        "name": "B币券",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/90e1cad7ccaa4c7d29728bdb68bb1af833b2b46b.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/c3dcef2bfea737a1342dacea1027a3b299d3cf71.png"
+                    },
+                    {
+                        "name": "粉色昵称",
+                        "icon_url": "http://i0.hdslb.com/bfs/vip/f50ed845a94ac63adaa28f47716965269f9a9bdc.png",
+                        "type": 1,
+                        "icon_gray_url": "http://i0.hdslb.com/bfs/vip/b67288e008a9fdfec0b13a27a527bb8db701c0d4.png"
+                    }
+                ]
+            }
+        },
+        "user_info": {
+            "background_url": "http://i0.hdslb.com/bfs/vip/bg_2019.png",
+            "user_explain": "大会员：有效期至2023-08-19",
+            "tv_user_explain": "电视大会员：有效期至2060-05-28",
+            "user_name": "哔哩23君",
+            "face": "http://i2.hdslb.com/bfs/face/ae5688699ce97d3534fb837d52604a7f2b9b06d9.jpg",
+            "vip_status": 1
+        },
+        "tv_price_list": [
+            {
+                "month": 1,
+                "product_name": "月度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT1VIPbf1",
+                "original_price": 45,
+                "discount_rate": "",
+                "selected": 1,
+                "id": 88,
+                "remark": "31天电视大会员",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 45,
+                "channel_type": "tv",
+                "type": 0
+            },
+            {
+                "month": 1,
+                "product_name": "月度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT1VIP",
+                "original_price": 45,
+                "discount_rate": "优惠",
+                "selected": 0,
+                "id": 89,
+                "remark": "31天电视大会员",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 40,
+                "channel_type": "tv",
+                "type": 0
+            },
+            {
+                "month": 3,
+                "product_name": "季度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT3VIPbf1",
+                "original_price": 115,
+                "discount_rate": "",
+                "selected": 0,
+                "id": 90,
+                "remark": "93天电视大会员",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 115,
+                "channel_type": "tv",
+                "type": 0
+            },
+            {
+                "month": 3,
+                "product_name": "季度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT3VIP",
+                "original_price": 115,
+                "discount_rate": "8.5折",
+                "selected": 0,
+                "id": 91,
+                "remark": "93天电视大会员",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 98,
+                "channel_type": "tv",
+                "type": 0
+            },
+            {
+                "month": 12,
+                "product_name": "年度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT12VIPbf1",
+                "original_price": 388,
+                "discount_rate": "",
+                "selected": 0,
+                "id": 92,
+                "remark": "372天，天天好福利",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 388,
+                "channel_type": "tv",
+                "type": 1
+            },
+            {
+                "month": 12,
+                "product_name": "年度套餐",
+                "product_id": "tv.danmaku.bilianimexOTT12VIP",
+                "original_price": 388,
+                "discount_rate": "4.8折",
+                "selected": 0,
+                "id": 93,
+                "remark": "372天，天天好福利",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 188,
+                "channel_type": "tv",
+                "type": 1
+            },
+            {
+                "month": 1,
+                "product_name": "升级套餐",
+                "product_id": "tv.danmaku.bilianimexUpOTT1VIP",
+                "original_price": 20,
+                "discount_rate": "",
+                "selected": 0,
+                "id": 95,
+                "remark": "",
+                "sub_type": 0,
+                "suit_type": 0,
+                "max_num": 1,
+                "discount_price": 12,
+                "channel_type": "tv",
+                "type": 0
+            },
+            {
+                "month": 1,
+                "product_name": "升级套餐",
+                "product_id": "tv.danmaku.bilianimexUpOTT1VIPbf1",
+                "original_price": 20,
+                "discount_rate": "",
+                "selected": 0,
+                "id": 94,
+                "remark": "",
+                "sub_type": 0,
+                "suit_type": 10,
+                "max_num": 1,
+                "discount_price": 20,
+                "channel_type": "tv",
+                "type": 0
+            }
+        ],
+        "panel_info": {
+            "ios_tutorial_name": "",
+            "ios_tutorial_url": "",
+            "tv_subtitle": "TV端可用",
+            "vip_subtitle": "手机/电脑/iPad上可用",
+            "vip_tab_name": "大会员套餐",
+            "tv_tab_name": "电视大会员套餐",
+            "panel_type": 1
+        }
+    }
+}

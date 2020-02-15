@@ -1,6 +1,7 @@
 import axios from "./myaxios";
 import { LoginResult, UserList, CityListResult } from "../Types/Types"
-const REACT_APP_API_HOST = "http://cmsback.home"
+import { AxiosResponse } from "axios";
+const REACT_APP_API_HOST = "http://cms.back"
 
 /**
  * ==========================User==========================
@@ -47,6 +48,17 @@ export const apiCheckLogin = async (): Promise<LoginResult> => {
 export const apiGetAllCities = async (): Promise<CityListResult> => {
     return axios({
         url: REACT_APP_API_HOST + `/fy/citylist`,
+        method: "GET"
+    }).then(res => {
+        return res.data
+    })
+}
+/**
+ * ==========================TEST==========================
+ */
+export const apiCookie = async (): Promise<AxiosResponse> => {
+    return axios({
+        url: REACT_APP_API_HOST + `/api/user/cookie`,
         method: "GET"
     }).then(res => {
         return res.data

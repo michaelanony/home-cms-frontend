@@ -9,19 +9,20 @@ import MainPage from "./Pages/MainPage/MainPage";
 import LoginPage from "./Pages/LoginRegisterPage/LoginRegisterPage"
 import { actions } from "./Store/actions/actionCreators";
 import { connect } from "react-redux";
-import { AppState } from "./Store";
+import store, { AppState } from "./Store";
 import './App.scss'
 import SiderBar from "./Components/SiderBar/SiderBar"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
-
+import { getCookie } from "./lib/util"
 
 const App: React.FC<
     ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 > = ({ isLogin, userSigninWithSSOSuccess, userLoginSuccess }) => {
     const generateContet = () => {
-        console.log(isLogin)
-        if (isLogin) {
+        const cookie = getCookie("SESSIONID")
+        if (cookie) {
+            store.dispatch(actions.userLoginSuccess())
             return (
                 <Switch>
                     <Redirect
