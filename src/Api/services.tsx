@@ -1,7 +1,7 @@
 import axios from "./myaxios";
 import { LoginResult, UserList, CityListResult } from "../Types/Types"
 import { AxiosResponse } from "axios";
-const REACT_APP_API_HOST = "http://cms.back"
+const REACT_APP_API_HOST = "http://cmsback.home"
 
 /**
  * ==========================User==========================
