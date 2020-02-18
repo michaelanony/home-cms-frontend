@@ -23,8 +23,11 @@ const Header: React.FC<{}> = () => {
     }
     const user = getCookie("username")
     const exitLogin = () => {
+        let t = getCookie("username")
+
         setCookie("username", "", -1);
         setCookie("SESSIONID", "", -1)
+        console.log(t)
         store.dispatch(actions.apiResponseUnauthorized())
     }
     if (store.getState().loginStatus.isLogin) {
