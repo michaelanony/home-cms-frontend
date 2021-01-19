@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import "./LoginRegisterPage.scss"
 import { RouteComponentProps } from "react-router";
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
 type Props = {
@@ -21,11 +21,11 @@ const LoginRegisterPage: React.FC<{}> = ({ }) => {
     const generateForm = () => {
         if (isShowResgisterPage) {
             return <RegisterFrom
-                setIsShowRegisterPage={setIsShowRegisterPage}
+
             />
         } else {
             return <LoginForm
-                setIsShowRegisterPage={setIsShowRegisterPage}
+
             />
         }
     }

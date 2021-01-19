@@ -1,27 +1,21 @@
 import axios from "./myaxios";
-import { LoginResult, UserList, CityListResult } from "../Types/Types"
+import { LoginResult, UserList, CityListResult, UserResp } from "../Types/Types"
 import { AxiosResponse } from "axios";
-const REACT_APP_API_HOST = "http://api.cms.home"
+const REACT_APP_API_HOST = "http://127.0.0.1:4000"
 
 /**
  * ==========================User==========================
  */
-export const apiUserLogin = async (username: string, password: string): Promise<LoginResult> => {
+export const apiUserLogin = async (username: string, password: string): Promise<UserResp> => {
     return axios({
-        url: REACT_APP_API_HOST + `/api/user/login`,
+        url: REACT_APP_API_HOST + `/v1/user/login`,
         method: "POST",
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        data: { "u_name": username, "u_password": password },
-        transformRequest: [function (data) {
-            // Do whatever you want to transform the data
-            let ret = ''
-            for (let it in data) {
-                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-            }
-            return ret
-        }],
+        data: {
+            user: username,
+            pwd: password,
+        },
     }).then(res => {
-        return res.data;
+        return res.data
     })
 }
 export const apiGetAllUsers = async (): Promise<UserList> => {
@@ -32,15 +26,22 @@ export const apiGetAllUsers = async (): Promise<UserList> => {
         return res.data
     })
 }
-
-export const apiCheckLogin = async (): Promise<LoginResult> => {
+export const apiCheckLogin = async (token: string): Promise<UserResp> => {
     return axios({
-        url: REACT_APP_API_HOST + `/api/user/current`,
+        url: REACT_APP_API_HOST + `/v1/user/check?token=` + token,
         method: "GET",
     }).then(res => {
         return res.data
     })
 }
+// export const apiCheckLogin = async (): Promise<LoginResult> => {
+//     return axios({
+//         url: REACT_APP_API_HOST + `/api/user/current`,
+//         method: "GET",
+//     }).then(res => {
+//         return res.data
+//     })
+// }
 /**
  * ==========================FY==========================
  */

@@ -1,45 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    withRouter,
-    Switch
-} from "react-router-dom";
+import React, { ReactElement } from 'react'
 import "./Header.scss";
-import { RouteComponentProps } from "react-router";
-import { UserInfo } from "../../Types/Types"
-import { Menu, Icon } from 'antd';
-import store from "../../Store/index"
-import { actions } from "../../Store/actions/actionCreators";
-import { apiCheckLogin } from "../../Api/services"
-import { setCookie, getCookie } from "../../lib/util"
-const { SubMenu } = Menu;
-const Header: React.FC<{}> = () => {
-    const getCurrentUser = () => {
-        apiCheckLogin().then(res => {
-            console.log(res.data)
-        })
-    }
-    const user = getCookie("username")
+import { useDispatch, useSelector } from 'react-redux';
+import { createUserClean } from "../../Store/actions/userAcitonCreators";
+import { Link } from 'react-router-dom';
+const Header: React.FC = (): ReactElement => {
+    const state = useSelector((state: any) => state.userReducer)
+    console.log(state)
+    const dispatch = useDispatch()
     const exitLogin = () => {
-        let t = getCookie("username")
-
-        setCookie("username", "", -1);
-        setCookie("SESSIONID", "", -1)
-        console.log(t)
-        store.dispatch(actions.apiResponseUnauthorized())
+        dispatch(createUserClean())
     }
-    if (store.getState().loginStatus.isLogin) {
+    if (state.isLogin) {
         return (
             <div className="header-title" >
                 <div className="header-title-content">
                     <div className="header-title-content-user">
-                        <span>欢迎:</span><span>{user}</span>
+                        <span>欢迎:</span><span>{state.userName}</span>
                     </div>
                     <div className="header-title-content-logout">
-                        <span onClick={() => getCurrentUser()}>个人中心</span>
-                        <span onClick={() => exitLogin()}>退出</span>
+                        <Link to="/usercenter" ><span >个人中心</span></Link>
+                        <span onClick={exitLogin}>退出</span>
                     </div>
                 </div>
 

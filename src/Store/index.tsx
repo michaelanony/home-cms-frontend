@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reducer from './reducer/reducer'
+import reducer from './reducers'
 import rootSaga from "./sagas";
 import createSagaMiddleware from "redux-saga";
 
@@ -17,5 +17,4 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-export type AppState = ReturnType<typeof reducer>;
 export default store;

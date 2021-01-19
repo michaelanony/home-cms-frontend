@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import {
-    BrowserRouter as Router,
-    Route,
-    Link,
     withRouter,
-    Switch
 } from "react-router-dom";
 import "./UserList.scss";
-import { RouteComponentProps } from "react-router";
-import { Layout, Table } from 'antd';
 import UserTable from "../../Components/UserTable/UserTable"
 import { apiGetAllUsers } from "../../Api/services"
 import { UserInfo } from "../../Types/Types"
@@ -78,7 +72,7 @@ const columns = [
     },
 ];
 
-const UserList: React.FC<RouteComponentProps> = ({ history }) => {
+const UserList: React.FC = () => {
     const [data, setData] = useState<UserInfo[]>([]);
     useEffect(() => {
         apiGetAllUsers().then(res => {

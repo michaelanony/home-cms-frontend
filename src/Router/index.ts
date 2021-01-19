@@ -1,11 +1,8 @@
-import Home from '../Pages/MainPage/MainPage'
 import UserList from '../Pages/UserList/UserList';
 import MineCenter from '../Pages/MineCenter/MineCenter';
-
-let routes = [
-    { path: '/', component: Home, exact: false },
+import MainPage from "../Pages/MainPage/MainPage";
+export let routes = [
     { path: '/userlist', component: UserList },
-    { path: '/usercenter', component: MineCenter }
+    { path: '/usercenter', component: MineCenter },
+    { path: '/index', component: MainPage }
 ]
-
-export default routes;

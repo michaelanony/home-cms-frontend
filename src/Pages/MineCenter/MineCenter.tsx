@@ -9,7 +9,7 @@ import {
     Switch
 } from "react-router-dom";
 
-const MineCenter: React.FC<RouteComponentProps> = ({ history }) => {
+const MineCenter: React.FC = () => {
     return (
         <div>Mine</div>
     )

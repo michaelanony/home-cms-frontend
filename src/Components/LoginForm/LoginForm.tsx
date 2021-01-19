@@ -1,84 +1,66 @@
-import React, { Dispatch } from "react";
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import "./LoginForm.scss"
-import { apiUserLogin } from "../../Api/services"
-import { actions } from "../../Store/actions/actionCreators"
-import store from "../../Store/index"
-const FormItem = Form.Item
-type IProps = {
-    form: any
-    setIsShowRegisterPage: Dispatch<boolean>
+import React from 'react'
+import './LoginForm.scss'
+import { apiUserLogin } from "../../Api/services";
+import { Form, Input, Button, Checkbox } from 'antd';
+import { createUserLogin } from "../../Store/actions/userAcitonCreators";
+import { useDispatch } from 'react-redux';
+interface userFrom {
+    username: string,
+    password: string,
+    remember: boolean
 }
-
-const LoginForm = (props: IProps) => {
-    const showRegisterPage = () => {
-        props.setIsShowRegisterPage(true)
-    }
-    const {
-        form: { getFieldDecorator }
-    } = props
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        props.form.validateFields((err: boolean, values: any) => {
-            if (!err) {
-                console.log(values.password)
-                apiUserLogin(values.username, values.password).then(res => {
-                    if (res.code === 200) {
-
-                        store.dispatch(actions.userLoginSuccess())
-                        console.log(store.getState())
-                    } else {
-                        alert("账号密码错误")
-                    }
-                })
+const LoginForm = () => {
+    const dispatch = useDispatch()
+    const onFinish = (v: userFrom) => {
+        apiUserLogin(v.username, v.password).then(res => {
+            if (res.code === 200 && res.data) {
+                localStorage.setItem("ac-token", res.data.token)
+                dispatch(createUserLogin(res.data.user))
+            } else {
+                alert(res.msg)
             }
         })
-    }
+    };
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
     return (
-        <div className="login-content">
-            <Form onSubmit={handleSubmit} className="login-form">
-                <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: 'Please input your username!' }],
-                    })(
-                        <Input
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="Username"
-                        />,
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }],
-                    })(
-                        <Input
-                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            type="password"
-                            placeholder="Password"
-                        />,
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('remember', {
-                        valuePropName: 'checked',
-                        initialValue: true,
-                    })(<Checkbox>记住密码</Checkbox>)}
-                    <a className="login-form-forgot" href="">
-                        忘记密码
-          </a>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        登陆
-          </Button>
-                    或 <a onClick={() => showRegisterPage()}>现在注册!</a>
+        <div>
+            <Form
 
+                name="basic"
+                initialValues={{ remember: true }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+            >
+                <Form.Item
+                    label="Username"
+                    name="username"
+                    rules={[{ required: true, message: 'Please input your username!' }]}
+                >
+                    <Input />
+                </Form.Item>
+
+                <Form.Item
+                    label="Password"
+                    name="password"
+                    rules={[{ required: true, message: 'Please input your password!' }]}
+                >
+                    <Input.Password />
+                </Form.Item>
+
+                <Form.Item name="remember" valuePropName="checked">
+                    <Checkbox>Remember me</Checkbox>
+                </Form.Item>
+
+                <Form.Item >
+                    <Button type="primary" htmlType="submit">
+                        Submit
+        </Button>
                 </Form.Item>
             </Form>
-        </div >
+        </div>
     )
 }
 
-
-
-const UserLoginForms = Form.create<IProps>()(LoginForm)
-
-export default UserLoginForms;
+export default LoginForm;

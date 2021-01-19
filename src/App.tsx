@@ -1,84 +1,68 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
     Route,
     Redirect,
     Switch
 } from "react-router-dom";
-import MainPage from "./Pages/MainPage/MainPage";
 import LoginPage from "./Pages/LoginRegisterPage/LoginRegisterPage"
-import { actions } from "./Store/actions/actionCreators";
-import { connect } from "react-redux";
-import store, { AppState } from "./Store";
+import { createUserLoginWithSSO } from "./Store/actions/userAcitonCreators";
 import './App.scss'
 import SiderBar from "./Components/SiderBar/SiderBar"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
-import { getCookie } from "./lib/util"
-
-const App: React.FC<
-    ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
-> = ({ isLogin, userSigninWithSSOSuccess, userLoginSuccess }) => {
-    const generateContet = () => {
-        const cookie = getCookie("SESSIONID")
-        if (cookie) {
-            store.dispatch(actions.userLoginSuccess())
+import { useDispatch, useSelector } from "react-redux";
+import { routes } from "./Router/index";
+function App() {
+    const token = localStorage.getItem("ac-token")
+    const dispatch = useDispatch()
+    const isLogin = useSelector((state: any) => state.userReducer.isLogin)
+    if (token && !isLogin) {
+        dispatch(createUserLoginWithSSO(token))
+    }
+    const generatorContent = () => {
+        if (token) {
             return (
                 <Switch>
-                    <Redirect
-                        path="/index"
-                        exact
-                        to={{ pathname: "/index" }}
-                    // to={{ pathname: "/config/certificates" }}
-                    ></Redirect>
-                    <Route path="/index" component={MainPage} />
+                    {
+                        routes.map((v, index) => {
+                            return (
+                                <Route path={v.path} component={v.component} key={index} />
+                            )
+                        })
+                    }
+                    <Redirect to="/index" />
+
                 </Switch>
+
+
             )
         } else {
             return (
                 <Switch>
-                    <Redirect
-                        path="/"
-                        exact
-                        to={{ pathname: "/login" }}
-                    // to={{ pathname: "/config/certificates" }}
-                    ></Redirect>
-                    <Route path="/" component={LoginPage} />
+
+                    <Route path="/login" component={LoginPage} />
+                    <Redirect to="/login" />
                 </Switch>
             )
         }
     }
+
     return (
-        <Router>
+        <div className="content">
             <div className="content">
-                <div className="content">
-                    <SiderBar
-
+                <SiderBar
+                    isLogin={isLogin}
+                />
+                <div className="right-content">
+                    <Header
                     />
-                    <div className="right-content">
-                        <Header
-
-                        />
-                        <div className="app_content">
-                            {generateContet()}
-                        </div>
-                        <Footer />
+                    <div className="app_content">
+                        {generatorContent()}
                     </div>
+                    <Footer />
                 </div>
             </div>
-        </Router>
+        </div>
     )
-
 }
-const mapStateToProps = (state: AppState) => ({
-    isLogin: state.loginStatus.isLogin
-});
-const mapDispatchToProps = {
-    userSigninWithSSOSuccess: actions.userSigninWithSSOSuccess,
-    userLoginSuccess: actions.userLoginSuccess
-};
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
-
+export default App;

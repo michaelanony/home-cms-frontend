@@ -7,11 +7,10 @@ import {
     Switch
 } from "react-router-dom";
 import "./Footer.scss";
-import { RouteComponentProps } from "react-router";
-import { UserInfo } from "../../Types/Types"
-import { Menu, Icon } from 'antd';
+
+import { Menu } from 'antd';
 const { SubMenu } = Menu;
-const Header: React.FC<RouteComponentProps> = ({ history }) => {
+const Header: React.FC = ({ }) => {
 
     return (
         <div className="foot_content" >Home CMS ©2020 Created by ChenBo</div>
