@@ -5,7 +5,6 @@ import { createUserClean } from "../../Store/actions/userAcitonCreators";
 import { Link } from 'react-router-dom';
 const Header: React.FC = (): ReactElement => {
     const state = useSelector((state: any) => state.userReducer)
-    console.log(state)
     const dispatch = useDispatch()
     const exitLogin = () => {
         dispatch(createUserClean())

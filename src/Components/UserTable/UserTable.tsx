@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    withRouter,
-    Switch
-} from "react-router-dom";
+import React from 'react'
+
 import "./UserTable.scss";
-import { RouteComponentProps } from "react-router";
-import { Layout, Table } from 'antd';
+
+import { Table } from 'antd';
 import { UserInfo } from "../../Types/Types"
-const { Header, Content, Footer, Sider } = Layout;
+
 
 type Props = {
     columns: any[],

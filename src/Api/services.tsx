@@ -1,5 +1,5 @@
 import axios from "./myaxios";
-import { LoginResult, UserList, CityListResult, UserResp } from "../Types/Types"
+import { UserList, CityListResult, UserResp } from "../Types/Types"
 import { AxiosResponse } from "axios";
 const REACT_APP_API_HOST = "http://127.0.0.1:4000"
 

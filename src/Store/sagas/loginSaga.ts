@@ -7,7 +7,6 @@ export function* loginSaga() {
         const token = yield select(state => state.userReducer.payload.token)
         const res: UserResp = yield call(apiCheckLogin, token)
         if (res.code === 200 && res.data) {
-            console.log(123)
             yield put({
                 type: UserActionTypes.USER_LOGIN_SUCCESS,
                 payload: {

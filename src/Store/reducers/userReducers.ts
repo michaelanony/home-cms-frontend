@@ -5,10 +5,7 @@ export interface UserState {
     isLogin: boolean,
     status: number
 }
-interface UserAction {
-    type: string,
-    payload: UserState
-}
+
 const initialState: UserState = {
     userName: "",
     isLogin: false,
@@ -16,10 +13,11 @@ const initialState: UserState = {
 }
 
 
-export default function userReducer(state = initialState, action: UserAction): UserState {
-    console.log(action)
+export default function userReducer(state = initialState, action: any): UserState {
     switch (action.type) {
         case UserActionTypes.USER_LOGIN_WITH_SSO:
+            return Object.assign({}, state, action)
+        case UserActionTypes.USER_CLEAN:
             return Object.assign({}, state, action)
         case UserActionTypes.USER_LOGIN_SUCCESS:
             return {

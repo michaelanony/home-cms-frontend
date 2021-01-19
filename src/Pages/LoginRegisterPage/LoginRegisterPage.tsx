@@ -1,37 +1,16 @@
-import React, { useState, Dispatch } from 'react'
-import RegisterFrom from "../../Components/RegisterForm/RegisterForm"
+import React from 'react'
+
 import LoginForm from "../../Components/LoginForm/LoginForm"
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    withRouter,
-    Switch
-} from "react-router-dom";
+
 import "./LoginRegisterPage.scss"
-import { RouteComponentProps } from "react-router";
-import { Layout, Menu } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
-type Props = {
 
-}
-const LoginRegisterPage: React.FC<{}> = ({ }) => {
-    const [isShowResgisterPage, setIsShowRegisterPage] = useState(false)
-    const generateForm = () => {
-        if (isShowResgisterPage) {
-            return <RegisterFrom
+const LoginRegisterPage: React.FC = () => {
 
-            />
-        } else {
-            return <LoginForm
 
-            />
-        }
-    }
     return (
         <div className="form-position">
-            {generateForm()}
+            <LoginForm />
         </div>
     )
 }

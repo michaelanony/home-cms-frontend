@@ -68,7 +68,7 @@ const columns = [
         key: 'operation',
         fixed: 'right',
         width: 100,
-        render: () => <a>删除</a>,
+        render: () => <button>删除</button>,
     },
 ];
 
