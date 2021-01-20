@@ -20,7 +20,7 @@ export const apiUserLogin = async (username: string, password: string): Promise<
 }
 export const apiGetAllUsers = async (): Promise<UserList> => {
     return axios({
-        url: REACT_APP_API_HOST + `/api/user/alluser`,
+        url: REACT_APP_API_HOST + `/v1/user/alluser`,
         method: "GET",
     }).then(res => {
         return res.data
